@@ -1,0 +1,76 @@
+/* ============================================================
+   Branch Management — Beautiful UI
+============================================================ */
+
+.bm-page { display: flex; flex-direction: column; gap: 14px; }
+
+/* ---------- Header & Buttons ---------- */
+.bm-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; }
+.bm-head h1 { margin: 0; font-size: 20px; font-weight: 800; letter-spacing: -0.4px; color: #101b35; }
+.bm-head p { margin: 4px 0 0; font-size: 12.5px; color: #7c879a; }
+
+.bm-primary { padding: 0 16px; min-height: 42px; border: 0; border-radius: 10px; background: #1769e0; color: #ffffff; font-size: 12.5px; font-weight: 700; cursor: pointer; transition: background 0.15s ease; white-space: nowrap; }
+.bm-primary:hover { background: #1254b8; }
+.bm-primary:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.bm-secondary { padding: 0 16px; min-height: 40px; border: 1px solid #dde4ee; border-radius: 10px; background: #ffffff; color: #344158; font-size: 12.5px; font-weight: 700; cursor: pointer; }
+.bm-secondary:hover { background: #f1f6ff; border-color: #c9dcf8; }
+.bm-secondary:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* ---------- Advanced Search Grid ---------- */
+.bm-search-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 16px; }
+.bm-search-grid input, .bm-search-grid select { min-height: 40px; padding: 8px 12px; border: 1px solid #dfe6f0; border-radius: 10px; font-size: 13px; outline: none; background: #fff; color: #29364c; }
+.bm-search-grid input:focus, .bm-search-grid select:focus { border-color: #1769e0; box-shadow: 0 0 0 3px rgba(23, 105, 224, 0.1); }
+
+/* ---------- Table Helpers ---------- */
+.bm-row { cursor: pointer; }
+.bm-cell-main b { display: block; font-size: 12.5px; color: #1c2740; }
+.bm-cell-main small { display: block; font-size: 11px; color: #6b7688; margin-top: 2px; }
+.bm-link { color: #1769e0; font-weight: 700; font-size: 11.5px; background: none; border: none; cursor: pointer; padding: 0; }
+.bm-link:hover { text-decoration: underline; }
+.bm-mono { font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; font-size: 11.5px; color: #55617a; }
+
+.bm-action-row { display: flex; gap: 12px; }
+
+/* ---------- Pagination ---------- */
+.bm-pagination { display: flex; align-items: center; justify-content: space-between; margin-top: 16px; padding-top: 16px; border-top: 1px solid #eef2f8; font-size: 12px; color: #6b7688; }
+.bm-pagination > div { display: flex; gap: 8px; }
+
+/* ---------- Beautiful Modal (Rows & Columns) ---------- */
+.bm-modal-backdrop { position: fixed; inset: 0; z-index: 900; background: rgba(15, 23, 42, 0.45); backdrop-filter: blur(3px); display: grid; place-items: center; padding: 24px; }
+.bm-modal { width: min(680px, 100%); max-height: calc(100vh - 48px); overflow-y: auto; background: #ffffff; border-radius: 16px; padding: 24px; box-shadow: 0 25px 60px rgba(15, 23, 42, 0.28); animation: bmModalIn 0.18s ease; }
+@keyframes bmModalIn { from { opacity: 0; transform: translateY(-10px) scale(0.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+
+.bm-modal-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; padding-bottom: 16px; border-bottom: 1px solid #eef2f8; margin-bottom: 20px; }
+.bm-modal-head h2 { margin: 0; font-size: 20px; font-weight: 800; color: #101b35; }
+.bm-modal-head p { margin: 4px 0 0; font-size: 12px; color: #7c879a; }
+
+/* The Grid inside the detail modal */
+.bm-detail-body { display: flex; flex-direction: column; gap: 16px; }
+.bm-info-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.bm-info-card { background: #f8fafc; border: 1px solid #eef2f8; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 6px; }
+.bm-info-card span { font-size: 11px; font-weight: 700; color: #8792a5; text-transform: uppercase; letter-spacing: 0.5px; }
+.bm-info-card b { font-size: 14px; font-weight: 600; color: #1c2740; word-break: break-word; }
+.bm-span-2 { grid-column: span 2; }
+
+/* ---------- Form Grid (Create/Edit Modal) ---------- */
+.bm-form { display: flex; flex-direction: column; gap: 14px; }
+.bm-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.bm-field { display: flex; flex-direction: column; gap: 5px; }
+.bm-field span { font-size: 11.5px; font-weight: 700; color: #344158; }
+
+.bm-field input, .bm-field select, .bm-field textarea {
+  min-height: 42px; padding: 8px 12px; border: 1px solid #dfe6f0; border-radius: 10px;
+  background: #ffffff; font: inherit; font-size: 13px; color: #29364c; outline: none;
+}
+.bm-field textarea { resize: vertical; min-height: 80px; }
+.bm-field input:focus, .bm-field select:focus, .bm-field textarea:focus { border-color: #1769e0; box-shadow: 0 0 0 3px rgba(23, 105, 224, 0.1); }
+
+.bm-form-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 10px; }
+
+@media (max-width: 760px) {
+  .bm-info-grid { grid-template-columns: minmax(0, 1fr); }
+  .bm-span-2 { grid-column: auto; }
+  .bm-grid { grid-template-columns: minmax(0, 1fr); }
+  .bm-search-grid { grid-template-columns: 1fr; }
+}

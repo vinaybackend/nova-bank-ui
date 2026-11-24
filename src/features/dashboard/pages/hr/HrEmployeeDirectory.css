@@ -1,0 +1,385 @@
+/* ============================================================
+   HR Employee Directory — Dedicated Styles
+============================================================ */
+
+.hr-dir-page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ---------- 1. Top Widgets Row (Made Compact) ---------- */
+.hr-widgets-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.hr-widget-card {
+  padding: 12px 16px; /* 👈 Reduced padding */
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+}
+
+.hr-panel-head h2 {
+  font-size: 14px; /* 👈 Smaller heading */
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.hr-panel-head p {
+  font-size: 12px;
+  color: #64748b;
+  margin: 2px 0 12px 0;
+}
+
+.hr-widget-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px; /* 👈 Tighter gap */
+}
+
+.hr-widget-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px; /* 👈 Reduced padding */
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.hr-widget-list li:hover {
+  background: #f7faff;
+}
+
+.hr-widget-list img {
+  width: 26px; /* 👈 Smaller avatar */
+  height: 26px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.hr-widget-icon {
+  width: 26px; /* 👈 Smaller icon */
+  height: 26px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.hr-widget-list b {
+  display: block;
+  font-size: 12.5px; /* 👈 Smaller text */
+  color: #1c2740;
+}
+
+.hr-widget-list small {
+  display: block;
+  font-size: 10.5px; /* 👈 Smaller subtext */
+  color: #8792a5;
+  margin-top: 1px;
+}
+
+/* ---------- 2. Header & Search ---------- */
+.hr-dir-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.hr-dir-head h2 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 750;
+  color: #101b35;
+}
+.hr-dir-head p {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: #8792a5;
+}
+.hr-dir-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.hr-search {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid #dde4ee;
+  font-size: 13px;
+  min-width: 260px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  font-family: inherit;
+}
+.hr-search:focus {
+  border-color: #1769e0;
+  box-shadow: 0 0 0 3px rgba(23, 105, 224, 0.1);
+}
+
+/* ---------- 3. Table (Matched to Button Color) ---------- */
+.hr-table-wrap {
+  overflow-x: auto;
+  border: 1px solid #e9edf3;
+  border-radius: 11px;
+}
+.hr-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 640px;
+}
+
+.hr-table thead th {
+  padding: 12px 14px;
+  background: #1769e0; /* Matching the Register Button */
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  border-bottom: 1px solid #e1e7f0;
+}
+.hr-table thead th:first-child { border-top-left-radius: 10px; }
+.hr-table thead th:last-child { border-top-right-radius: 10px; }
+
+.hr-table tbody td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #eef2f8;
+  color: #28344a;
+  font-size: 12.5px;
+  vertical-align: middle;
+}
+.hr-table tbody tr:hover {
+  background: #f7faff;
+}
+
+.hr-row {
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.hr-cell-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hr-cell-user b {
+  font-size: 12.5px;
+  color: #1c2740;
+}
+.hr-mono {
+  font-family: ui-monospace, monospace;
+  font-size: 11.5px;
+  color: #55617a;
+}
+.hr-link {
+  color: #1769e0;
+  font-weight: 700;
+  font-size: 11.5px;
+}
+.hr-empty {
+  padding: 20px;
+  text-align: center;
+  color: #8792a5;
+  font-size: 12px;
+}
+
+/* ---------- 4. Buttons ---------- */
+.hr-btn-primary {
+  padding: 8px 16px;
+  border: 0;
+  border-radius: 8px;
+  background: #1769e0;
+  color: #ffffff;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.hr-btn-primary:hover { background: #1254b8; }
+.hr-btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.hr-btn-secondary {
+  padding: 8px 14px;
+  border: 1px solid #dde4ee;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #344158;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.hr-btn-secondary:hover { background: #f1f6ff; border-color: #c9dcf8; }
+
+/* ---------- 5. Status Pills ---------- */
+.hr-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.hr-status.ok { background: #e7f8ef; color: #127c50; }
+.hr-status.warn { background: #fff5d9; color: #8a6000; }
+.hr-status.bad { background: #ffebed; color: #b73b4a; }
+.hr-status.neutral { background: #eef2f8; color: #6b7789; }
+
+/* ---------- 6. Drawer (Detail & Registration) - COMPACT VERSION ---------- */
+.hr-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(15, 23, 42, 0.5);
+  display: flex;
+  justify-content: flex-end;
+  animation: hrFadeIn 0.2s ease;
+}
+@keyframes hrFadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.hr-drawer {
+  width: min(600px, 100%); /* 👈 Made slightly narrower */
+  background: #ffffff;
+  height: 100%;
+  overflow-y: auto;
+  padding: 20px 24px; /* 👈 Reduced outer padding */
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.1);
+  animation: hrSlideIn 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+@keyframes hrSlideIn { from { transform: translateX(100%); } to { transform: translateX(0); } }
+
+.hr-drawer-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 12px; /* 👈 Reduced from 20px */
+  border-bottom: 1px solid #eef2f8;
+  margin-bottom: 16px; /* 👈 Reduced from 24px */
+}
+.hr-drawer-head h2 { 
+  margin: 0; 
+  font-size: 18px; /* 👈 Smaller title */
+  font-weight: 800; 
+  color: #101b35; 
+}
+.hr-close-btn { 
+  background: #f1f5f9; 
+  border: 0; 
+  width: 28px; /* 👈 Smaller button */
+  height: 28px; 
+  border-radius: 8px; 
+  cursor: pointer; 
+  font-size: 12px; 
+  color: #64748b; 
+  display: grid; 
+  place-items: center; 
+  transition: background 0.15s ease; 
+}
+.hr-close-btn:hover { background: #e2e8f0; }
+
+.hr-drawer-body { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 16px; /* 👈 Huge reduction from 28px */
+}
+.hr-section h3 { 
+  font-size: 10.5px; /* 👈 Smaller section header */
+  font-weight: 800; 
+  color: #5b7bb5; 
+  text-transform: uppercase; 
+  letter-spacing: 0.5px; 
+  margin-bottom: 8px; /* 👈 Reduced from 14px */
+}
+.hr-grid-2 { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 8px; /* 👈 Reduced from 12px */
+}
+
+.hr-field { 
+  background: #f8fafc; 
+  padding: 8px 12px; /* 👈 Reduced from 12px */
+  border-radius: 8px; 
+  border: 1px solid #eef2f8; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 2px; /* 👈 Reduced from 4px */
+}
+.hr-field span { 
+  display: block; 
+  font-size: 9.5px; /* 👈 Smaller label */
+  color: #8792a5; 
+  font-weight: 700; 
+  text-transform: uppercase; 
+  letter-spacing: 0.4px; 
+}
+.hr-field b { 
+  font-size: 12.5px; /* 👈 Smaller value text */
+  color: #1c2740; 
+  line-height: 1.4; 
+  overflow-wrap: anywhere; 
+}
+
+.hr-form-input { 
+  width: 100%; 
+  padding: 8px 12px; 
+  border: 1px solid #dde4ee; 
+  border-radius: 8px; 
+  font-size: 13px; 
+  outline: none; 
+  background: #ffffff; 
+  font-family: inherit; 
+}
+.hr-form-input:focus { 
+  border-color: #1769e0; 
+  box-shadow: 0 0 0 3px rgba(23, 105, 224, 0.1); 
+}
+.hr-form-actions { 
+  display: flex; 
+  justify-content: flex-end; 
+  gap: 10px; 
+  margin-top: 16px; 
+  padding-top: 16px; 
+  border-top: 1px solid #eef2f8; 
+}
+
+.hr-alert { 
+  padding: 10px; 
+  margin-bottom: 16px; 
+  border-radius: 8px; 
+  font-size: 13px; 
+  font-weight: 600; 
+}
+.hr-alert.error { background: #ffebed; color: #b73b4a; border: 1px solid #f8c4cb; }
+.hr-alert.success { background: #e7f8ef; color: #127c50; border: 1px solid #cdecd9; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .hr-widgets-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 760px) {
+  .hr-widgets-grid { grid-template-columns: 1fr; }
+  .hr-grid-2 { grid-template-columns: 1fr; }
+  .hr-dir-head { flex-direction: column; align-items: stretch; }
+  .hr-search { width: 100%; }
+  .hr-dir-actions { flex-direction: column; }
+}

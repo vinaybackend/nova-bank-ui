@@ -1,0 +1,380 @@
+/* ============================================================
+   Admin KYC Management (Styled like Branch KYC Page)
+============================================================ */
+
+.bk-page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ---------- KPI Cards ---------- */
+.bk-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.bk-stat-card {
+  padding: 16px;
+  background: #ffffff;
+  border: 1px solid #e1e7f0;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.bk-stat-card span {
+  font-size: 11px;
+  color: #8792a5;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.bk-stat-card b {
+  font-size: 24px;
+  color: #1c2740;
+  font-weight: 800;
+}
+
+/* ---------- Panel Head & Search ---------- */
+.bk-panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.bk-panel-head h2 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 750;
+  color: #101b35;
+}
+.bk-panel-head p {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: #8792a5;
+}
+.bk-search {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #dde4ee;
+  font-size: 13px;
+  min-width: 200px;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+.bk-search:focus {
+  border-color: #1769e0;
+  box-shadow: 0 0 0 3px rgba(23, 105, 224, 0.1);
+}
+
+/* ---------- Table Row ---------- */
+.bk-row {
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.bk-row:hover {
+  background: #f7faff !important;
+}
+.bk-link {
+  color: #1769e0;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+/* ============================================================
+   MODAL STYLES
+   ============================================================ */
+
+.kyc-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(15, 23, 42, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.kyc-modal {
+  background: #ffffff;
+  width: 100%;
+  max-width: 650px;
+  max-height: 90vh;
+  border-radius: 14px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.kyc-modal-head {
+  padding: 20px 24px;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: #f8fafc;
+}
+
+.kyc-modal-head h2 {
+  margin: 0 0 4px;
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.kyc-mono {
+  font-family: ui-monospace, monospace;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.ad-icon-btn {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #64748b;
+  display: grid;
+  place-items: center;
+}
+
+.kyc-modal-body {
+  padding: 24px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Info Grid */
+.kyc-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.kyc-info-card {
+  background: #f8fafc;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+.kyc-info-card span {
+  display: block;
+  font-size: 10px;
+  color: #64748b;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.kyc-info-card b {
+  font-size: 13px;
+  color: #0f172a;
+}
+
+/* Documents */
+.kyc-section h3 {
+  font-size: 12px;
+  font-weight: 800;
+  color: #475569;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.kyc-doc-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.kyc-doc-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 12px 16px;
+  border-radius: 8px;
+}
+
+.kyc-doc-info span {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.kyc-doc-info small {
+  display: block;
+  font-size: 11px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+/* Action Form */
+.kyc-action-form {
+  border-top: 1px solid #e2e8f0;
+  padding-top: 20px;
+}
+
+.kyc-form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.kyc-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.kyc-field span {
+  font-size: 12px;
+  font-weight: 700;
+  color: #475569;
+}
+
+.kyc-field select,
+.kyc-field textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 13px;
+  outline: none;
+}
+
+.kyc-field select:focus,
+.kyc-field textarea:focus {
+  border-color: #1769e0;
+}
+
+.kyc-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.kyc-btn-primary {
+  padding: 9px 18px;
+  background: #1769e0;
+  color: #ffffff;
+  border: 0;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.kyc-btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.kyc-btn-secondary {
+  padding: 9px 18px;
+  background: #ffffff;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.kyc-btn-secondary:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* Doc Modal */
+.kyc-doc-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  background: rgba(15, 23, 42, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+.kyc-doc-modal {
+  background: #ffffff;
+  width: 100%;
+  max-width: 800px;
+  height: 80vh;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.kyc-doc-modal-head {
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.kyc-doc-modal-head strong {
+  font-size: 14px;
+  color: #0f172a;
+}
+
+.kyc-doc-modal-body {
+  flex: 1;
+  background: #f1f5f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.kyc-doc-modal-body iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.kyc-doc-modal-body img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.kyc-field.kyc-span-2 {
+  grid-column: 1 / -1;
+}
+
+/* Status Pills */
+.ad-status {
+  display: inline-flex;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+.ad-status-ok { background: #e7f8ef; color: #127c50; }
+.ad-status-warn { background: #fff5d9; color: #8a6000; }
+.ad-status-bad { background: #ffebed; color: #b73b4a; }
+.ad-status-neutral { background: #eef2f8; color: #6b7789; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+  .bk-stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 760px) {
+  .bk-stats-grid { grid-template-columns: 1fr; }
+  .bk-panel-head { flex-direction: column; align-items: stretch; }
+  .bk-search { width: 100%; }
+  .kyc-info-grid { grid-template-columns: 1fr; }
+}

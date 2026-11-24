@@ -1,0 +1,249 @@
+/* ============================================================
+   Account Management
+============================================================ */
+
+.am-page {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.am-head h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+  color: #101b35;
+}
+.am-head p {
+  margin: 4px 0 0;
+  font-size: 12.5px;
+  color: #7c879a;
+}
+
+/* ---------- Search ---------- */
+.am-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 10px;
+  border: 1px solid #dde4ee;
+  border-radius: 8px;
+  background: #ffffff;
+  min-height: 36px;
+  min-width: 260px;
+}
+.am-search:focus-within { border-color: #1769e0; }
+.am-search input {
+  border: 0;
+  background: transparent;
+  font: inherit;
+  font-size: 12.5px;
+  outline: none;
+  flex: 1;
+}
+.am-search button {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  color: #8792a5;
+}
+
+/* ---------- Table Helpers ---------- */
+.am-row { cursor: pointer; }
+.am-cell-main b {
+  display: block;
+  font-size: 12.5px;
+  color: #1c2740;
+}
+.am-cell-main small {
+  display: block;
+  font-size: 11px;
+  color: #6b7688;
+  margin-top: 2px;
+}
+.am-link {
+  color: #1769e0;
+  font-weight: 700;
+  font-size: 11.5px;
+}
+.am-mono {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 11.5px;
+  color: #55617a;
+}
+
+/* ---------- Pagination ---------- */
+.am-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+  font-size: 12px;
+  color: #7c879a;
+}
+.am-pagination button {
+  margin-left: 8px;
+  padding: 6px 12px;
+  border: 1px solid #dde4ee;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #344158;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.am-pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ---------- Modal Grid ---------- */
+.am-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(3px);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+.am-modal {
+  width: min(680px, 100%);
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.28);
+  animation: amModalIn 0.18s ease;
+}
+@keyframes amModalIn {
+  from { opacity: 0; transform: translateY(-10px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.am-modal-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #eef2f8;
+  margin-bottom: 20px;
+}
+.am-modal-head h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+  color: #101b35;
+}
+.am-modal-head p {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: #7c879a;
+}
+
+.am-detail-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.am-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.am-info-card {
+  background: #f8fafc;
+  border: 1px solid #eef2f8;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.am-info-card span {
+  font-size: 11px;
+  font-weight: 700;
+  color: #8792a5;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.am-info-card b {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1c2740;
+  word-break: break-word;
+}
+
+/* ---------- Status Manager ---------- */
+.am-status-manager {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: #f1f6ff;
+  border: 1px solid #d3e4ff;
+  border-radius: 12px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.am-status-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  color: #5b7bb5;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.am-status-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.am-status-actions select {
+  padding: 6px 12px;
+  border: 1px solid #bcd6ff;
+  border-radius: 8px;
+  background: #ffffff;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1c2740;
+  outline: none;
+  cursor: pointer;
+}
+.am-status-actions select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.am-updating {
+  font-size: 12px;
+  color: #1769e0;
+  font-weight: 600;
+}
+.am-closed-note {
+  margin: 0;
+  font-size: 12px;
+  color: #b73b4a;
+  font-style: italic;
+}
+
+/* ---------- Debit Card Section ---------- */
+.am-debit-card-info h3 {
+  margin: 0 0 10px;
+  font-size: 11px;
+  font-weight: 800;
+  color: #5b7bb5;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+@media (max-width: 760px) {
+  .am-info-grid { grid-template-columns: minmax(0, 1fr); }
+  .am-status-manager { flex-direction: column; align-items: flex-start; }
+  .am-search { width: 100%; }
+}

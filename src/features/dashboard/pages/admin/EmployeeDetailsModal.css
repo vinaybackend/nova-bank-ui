@@ -1,0 +1,150 @@
+/* src/pages/admin/EmployeeDetailsModal.css */
+.edm-backdrop {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.edm-modal {
+  background: #ffffff;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 750px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+}
+
+.edm-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 24px;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  z-index: 10;
+  border-radius: 12px 12px 0 0;
+}
+
+.edm-header h2 {
+  margin: 0 0 4px 0;
+  color: #111827;
+  font-size: 1.25rem;
+}
+
+.edm-header p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.edm-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.edm-section-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #f3f4f6;
+  padding-bottom: 8px;
+}
+
+.edm-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.edm-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.edm-field.span-2 {
+  grid-column: span 2;
+}
+
+.edm-field label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.edm-field span {
+  font-size: 0.875rem;
+  color: #111827;
+  font-weight: 500;
+  background: #f9fafb;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
+
+/* Status Action Section */
+.edm-status-action {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.edm-status-action .edm-field {
+  flex: 1;
+}
+
+.edm-status-action select {
+  padding: 8px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  outline: none;
+  background: #fff;
+}
+
+.edm-status-action select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+.edm-btn-primary {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 9px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  height: 38px;
+}
+
+.edm-btn-primary:hover {
+  background: #1d4ed8;
+}
+
+.edm-btn-primary:disabled {
+  background: #93c5fd;
+  cursor: not-allowed;
+}
